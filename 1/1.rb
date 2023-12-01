@@ -1,7 +1,6 @@
 
 # Part 1
  lines = File.read(File.join(__dir__, "input.txt")).split
- calibration_sum = 0
 
  answer = lines.sum do |line|
   number_string = line.delete("^0-9")
@@ -28,7 +27,6 @@ MAP = {
 }
 
 lines = File.read(File.join(__dir__, "input.txt")).split
-calibration_sum = 0
 
 answer = lines.sum do |line|
   MAP.each_pair {|word, num| line.gsub!(word, num)}
