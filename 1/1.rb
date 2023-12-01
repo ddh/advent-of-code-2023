@@ -3,12 +3,12 @@
  lines = File.read(File.join(__dir__, "input.txt")).split
  calibration_sum = 0
 
- lines.each do |line|
+ answer = lines.sum do |line|
   number_string = line.delete("^0-9")
-  calibration_sum += "#{number_string[0]}#{number_string[-1]}".to_i
+  "#{number_string[0]}#{number_string[-1]}".to_i
  end
 
- p calibration_sum
+ p answer
 
 #  Part 2
 #  words are now valid digits.
@@ -30,10 +30,10 @@ MAP = {
 lines = File.read(File.join(__dir__, "input.txt")).split
 calibration_sum = 0
 
-lines.each do |line|
+answer = lines.sum do |line|
   MAP.each_pair {|word, num| line.gsub!(word, num)}
   number_string = line.delete("^0-9")
-  calibration_sum += "#{number_string[0]}#{number_string[-1]}".to_i
+  "#{number_string[0]}#{number_string[-1]}".to_i
 end
 
-p calibration_sum
+p answer
